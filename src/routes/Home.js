@@ -5,6 +5,7 @@ import { dbService } from "../fBase";
 const Home = ({ userObj }) => {
     const [sweet, setsweet] = useState("");
     const [sweets, setsweets] = useState([]);
+    const [ attachment, setAttachment ] = useState();
 
     //트윗들 가져오는 방법(구식)
     // const getsweets = async () => {
@@ -46,11 +47,31 @@ const Home = ({ userObj }) => {
         setsweet(value);
     }
 
+    const onFileChange = (event) => {
+        const {target: { files }} = event;
+        const theFile = files[0]; //파일 추적 하나의 파일만 받기
+        const reader = new FileReader(); //파읽읽는 reader 만들기
+        reader.onloadend = (finishedEvent) => {
+            const {currentTarget: {result}} = finishedEvent //파읽에서 꺼내기
+            setAttachment(result) // state 에 파일 이름 넣기
+        }
+        reader.readAsDataURL(theFile) //파일 읽는 js 함수 , MDN 참조 데이터를 얻기
+    }
+
+    const onClearAttachment = () => setAttachment(null);
+
     return(
         <div>
             <form onSubmit={onSubmit}>
                 <input type="input" value={sweet} onChange={onChange}/>
+                <input type="file" accept="image/*" onChange={onFileChange}/>
                 <input type="submit" value="sweeter"/>
+                {attachment && 
+                    <div>
+                        <img src={attachment} width="100px" height="auto"/>
+                        <button onClick={onClearAttachment}>Clear</button>
+                    </div>
+                }
             </form>
             <div>
                 {sweets.map(sweet => (

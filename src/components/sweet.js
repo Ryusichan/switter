@@ -23,7 +23,7 @@ const Sweet = ({sweetObj, isOwner}) => {
     const onChange = (event) => {
         const {target: {value}} = event;
         setNewSweet(value);
-    }
+    };
     return(
         <div >
             {editing ? (
