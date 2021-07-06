@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import Sweet from "../components/sweet";
-import { dbService } from "../fBase";
+import { v4 as uuidv4 } from 'uuid';
+import { dbService, storageService } from "../fBase";
 
 const Home = ({ userObj }) => {
     const [sweet, setsweet] = useState("");
@@ -34,12 +35,15 @@ const Home = ({ userObj }) => {
     //promise 를 리턴하기 때문에 async로 써줌
     const onSubmit = async (event) => {
         event.preventDefault();
-        await dbService.collection("sweets").add({
-            text: sweet,
-            createdAt: Date.now(),
-            creatorId: userObj.uid
-        });
-        setsweet("")
+        const fileRef = storageService.ref().child(`${userObj.uid}/${uuidv4()}`) //collection 과 같이 firebase 에 이미지 업로드방법
+        const response = await fileRef.putString(attachment, "data_url");
+        console.log(response);
+        // await dbService.collection("sweets").add({
+        //     text: sweet,
+        //     createdAt: Date.now(),
+        //     creatorId: userObj.uid
+        // });
+        // setsweet("")
     }
     
     const onChange = (event) => {
@@ -68,7 +72,7 @@ const Home = ({ userObj }) => {
                 <input type="submit" value="sweeter"/>
                 {attachment && 
                     <div>
-                        <img src={attachment} width="100px" height="auto"/>
+                        <img alt="" src={attachment} width="100px" height="auto"/>
                         <button onClick={onClearAttachment}>Clear</button>
                     </div>
                 }
