@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/Ryusichan/switter/static/css/main.cab74d2d.chunk.css",
-    "main.js": "/Ryusichan/switter/static/js/main.bc9e2644.chunk.js",
-    "main.js.map": "/Ryusichan/switter/static/js/main.bc9e2644.chunk.js.map",
-    "runtime-main.js": "/Ryusichan/switter/static/js/runtime-main.ed9dffc6.js",
-    "runtime-main.js.map": "/Ryusichan/switter/static/js/runtime-main.ed9dffc6.js.map",
-    "static/js/2.00f4ebaa.chunk.js": "/Ryusichan/switter/static/js/2.00f4ebaa.chunk.js",
-    "static/js/2.00f4ebaa.chunk.js.map": "/Ryusichan/switter/static/js/2.00f4ebaa.chunk.js.map",
-    "index.html": "/Ryusichan/switter/index.html",
-    "static/css/main.cab74d2d.chunk.css.map": "/Ryusichan/switter/static/css/main.cab74d2d.chunk.css.map",
-    "static/js/2.00f4ebaa.chunk.js.LICENSE.txt": "/Ryusichan/switter/static/js/2.00f4ebaa.chunk.js.LICENSE.txt"
+    "main.css": "/switter/static/css/main.cab74d2d.chunk.css",
+    "main.js": "/switter/static/js/main.bc9e2644.chunk.js",
+    "main.js.map": "/switter/static/js/main.bc9e2644.chunk.js.map",
+    "runtime-main.js": "/switter/static/js/runtime-main.7c385f98.js",
+    "runtime-main.js.map": "/switter/static/js/runtime-main.7c385f98.js.map",
+    "static/js/2.00f4ebaa.chunk.js": "/switter/static/js/2.00f4ebaa.chunk.js",
+    "static/js/2.00f4ebaa.chunk.js.map": "/switter/static/js/2.00f4ebaa.chunk.js.map",
+    "index.html": "/switter/index.html",
+    "static/css/main.cab74d2d.chunk.css.map": "/switter/static/css/main.cab74d2d.chunk.css.map",
+    "static/js/2.00f4ebaa.chunk.js.LICENSE.txt": "/switter/static/js/2.00f4ebaa.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.ed9dffc6.js",
+    "static/js/runtime-main.7c385f98.js",
     "static/js/2.00f4ebaa.chunk.js",
     "static/css/main.cab74d2d.chunk.css",
     "static/js/main.bc9e2644.chunk.js"
