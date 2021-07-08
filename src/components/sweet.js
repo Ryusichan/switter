@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
-import { dbService } from '../fBase';
+import { dbService, storageService } from '../fBase';
 
-const Sweet = ({sweetObj, isOwner}) => {
+const Sweet = ({sweetObj, isOwner }) => {
     const [ editing, setEditing ] = useState(false);
     const [ newSweet, setNewSweet ] = useState(sweetObj.text);
     const onDeleteClick = async () => {
         const ok = window.confirm("Are you sure you want to delete this sweet?");
         if(ok) {
-            //삭제할 위치 cloud firestore 에서 찾기
+            //텍스트 지우기 삭제할 위치 cloud firestore 에서 찾기
             await dbService.doc(`sweets/${sweetObj.id}`).delete();
+            //사진 지우기 삭제할 위치 cloud 에서 지우기
+            await storageService.refFromURL(sweetObj.attachmentUrl).delete()
         }
     }
 
@@ -43,6 +45,7 @@ const Sweet = ({sweetObj, isOwner}) => {
             ) : (
                 <>
                     <h4>{sweetObj.text}</h4>
+                    {sweetObj.attachmentUrl && <img src={sweetObj.attachmentUrl} width="auto" height="50px"/>}
                     {isOwner && 
                     <>
                         <button onClick={onDeleteClick}>Delete Sweet</button>
