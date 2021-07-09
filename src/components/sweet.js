@@ -51,9 +51,9 @@ const Sweet = ({sweetObj, isOwner }) => {
             ) : (
                 <>
                     <h4>{sweetObj.text}</h4>
-                    {sweetObj.attachmentUrl && <img src={sweetObj.attachmentUrl} />}
+                    {sweetObj.attachmentUrl && <img alt="" src={sweetObj.attachmentUrl} />}
                     {isOwner && 
-                        <div class="nweet__actions">
+                        <div className="nweet__actions">
                             <span onClick={onDeleteClick}>
                                 <FontAwesomeIcon icon={faTrash} />
                             </span>

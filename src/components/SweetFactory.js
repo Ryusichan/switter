@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useState} from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { dbService, storageService } from '../fBase';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -64,7 +64,7 @@ const SweetFactory = ({userObj}) => {
                 />
                 <input type="submit" value="&rarr;" className="factoryInput__arrow" />
             </div>
-            <label for="attach-file" className="factoryInput__label">
+            <label htmlFor="attach-file" className="factoryInput__label">
                 <span>Add photos</span>
                 <FontAwesomeIcon icon={faPlus} />
             </label>
@@ -80,9 +80,10 @@ const SweetFactory = ({userObj}) => {
             {attachment && 
                  <div className="factoryForm__attachment">
                     <img
-                    src={attachment}
-                    style={{
-                        backgroundImage: attachment,
+                        alt=""    
+                        src={attachment}
+                        style={{
+                            backgroundImage: attachment,
                     }}
                     />
                     <div className="factoryForm__clear" onClick={onClearAttachment}>
