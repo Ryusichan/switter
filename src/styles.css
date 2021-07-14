@@ -32,7 +32,7 @@ form {
   width: 100%;
 }
 
-.nweet-input::placeholder {
+.sweet-input::placeholder {
   color: white;
   opacity: 0.9;
 }
@@ -141,11 +141,16 @@ form {
   flex-direction: column;
   justify-content: center;
 }
-
-.factoryForm__attachment img {
-  height: 80px;
+.factoryForm__attachment > div:nth-child(1){
   width: 80px;
-  border-radius: 40px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.factoryForm__attachment img {
+  height: 100%;
+  width: auto;
 }
 
 .factoryForm__clear {
@@ -159,15 +164,15 @@ form {
   font-size: 12px;
 }
 
-/* Nweet */
+/* sweet */
 
-.nweetEdit .formBtn {
+.sweetEdit .formBtn {
   cursor: pointer;
   margin-top: 15px;
   margin-bottom: 5px;
 }
 
-.nweet {
+.sweet > h4 {
   margin-bottom: 20px;
   background-color: white;
   width: 100%;
@@ -180,31 +185,32 @@ form {
   color: rgba(0, 0, 0, 0.8);
 }
 
-.nweet h4 {
+.sweet h4 {
   font-size: 14px;
 }
-
-.nweet img {
-  right: -10px;
-  top: 20px;
-  position: absolute;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  margin-top: 10px;
+.sweet > div {
+  display: flex;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.sweet img {
+  border-radius: 4px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto
 }
 
-.nweet__actions {
+.sweet__actions {
   position: absolute;
   right: 10px;
   top: 10px;
 }
 
-.nweet__actions span {
+.sweet__actions span {
   cursor: pointer;
 }
 
-.nweet__actions span:first-child {
+.sweet__actions span:first-child {
   margin-right: 10px;
 }
 

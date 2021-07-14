@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import Sweet from "../components/sweet";
-import { dbService, storageService } from "../fBase";
+import { dbService } from "../fBase";
 import SweetFactory from '../components/SweetFactory';
 
 const Home = ({ userObj }) => {

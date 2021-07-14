@@ -29,10 +29,10 @@ const Sweet = ({sweetObj, isOwner }) => {
         setNewSweet(value);
     };
     return(
-        <div className="nweet">
+        <div className="sweet">
             {editing ? (
                 <>
-                <form onSubmit={onSubmit} className="container nweetEdit">
+                <form onSubmit={onSubmit} className="container sweetEdit">
                     <input
                         type="text"
                         placeholder="Edit your sweet"
@@ -42,7 +42,7 @@ const Sweet = ({sweetObj, isOwner }) => {
                         onChange={onChange}
                         className="formInput"
                     />
-                    <input type="submit" value="Update Nweet" className="formBtn" />
+                    <input type="submit" value="Update sweet" className="formBtn" />
                 </form>
                 <span onClick={toggleEdditing} className="formBtn cancelBtn">
                     Cancel
@@ -50,10 +50,10 @@ const Sweet = ({sweetObj, isOwner }) => {
                 </>
             ) : (
                 <>
+                    {sweetObj.attachmentUrl && <div><img alt="" src={sweetObj.attachmentUrl} /></div>}
                     <h4>{sweetObj.text}</h4>
-                    {sweetObj.attachmentUrl && <img alt="" src={sweetObj.attachmentUrl} />}
                     {isOwner && 
-                        <div className="nweet__actions">
+                        <div className="sweet__actions">
                             <span onClick={onDeleteClick}>
                                 <FontAwesomeIcon icon={faTrash} />
                             </span>

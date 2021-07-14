@@ -5,13 +5,13 @@ import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 const Navigation = ({userObj}) => {
-    const checkUserObj = () => {
-        return userObj;
-    }
+    // const checkUserObj = () => {
+    //     return userObj;
+    // }
 
-    useEffect(() => {
-        checkUserObj()
-    },[])
+    // useEffect(() => {
+    //     checkUserObj()
+    // },[])
     return(
         <nav>
             <ul style={{ display: "flex", justifyContent: "center", marginTop: 50 }}>

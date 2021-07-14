@@ -79,13 +79,13 @@ const SweetFactory = ({userObj}) => {
             />
             {attachment && 
                  <div className="factoryForm__attachment">
-                    <img
-                        alt=""    
-                        src={attachment}
-                        style={{
-                            backgroundImage: attachment,
-                    }}
-                    />
+                    <div>
+                        <img
+                            alt=""    
+                            src={attachment}
+                            style={{ backgroundImage: attachment }}
+                        />
+                    </div>
                     <div className="factoryForm__clear" onClick={onClearAttachment}>
                     <span>Remove</span>
                     <FontAwesomeIcon icon={faTimes} />
